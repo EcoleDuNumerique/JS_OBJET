@@ -41,7 +41,7 @@ $.prototype.carrousel = function( images = [] ){
 
         })
 
-    })
+    });
 
     
 

@@ -51,5 +51,12 @@ var images = [
     "images/3.jpeg",
     "images/4.jpg"
 ];
+var images2 = [
+    "images/4.jpg",
+    "images/2.jpg",
+    "images/3.jpeg",
+    "images/1.jpg"
+];
+
 $("#carrousel_2").carrousel( images );
-$("#carrousel_3").carrousel( images );
+$("#carrousel_3").carrousel( images2 );
