@@ -1,0 +1,28 @@
+#carrousel, #carrousel_2 {
+    width: 500px;
+    height: 300px;
+    border: 1px solid black;
+}
+#carrousel_3 {
+    width: 800px;
+    height: 500px;
+    border: 1px solid black;
+}
+#carrousel .item {
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+}
+.item_1 {
+    background-image: url('images/1.jpg');
+}
+.item_2 {
+    background-image: url('images/2.jpg');
+}
+.item_3 {
+    background-image: url('images/3.jpeg');
+}
+.item_4 {
+    background-image: url('images/4.jpg');
+}
