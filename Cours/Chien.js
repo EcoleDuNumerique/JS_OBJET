@@ -1,8 +1,8 @@
 //Nouvelle ecriture Ecmascript (javascript) 2015
 class Chien extends Animal { //Attention a ne déclarer aucune variable avec le meme nom
 
-    static gambader(){
-        console.log("Les chiens gambadent");
+    static gambader(params){
+        console.log("Les "  + this.type + " gambadent " + params);
     }
 
     constructor( type, name, taille = 180, couleur = "brun" ){  //correspond au __construct de php
@@ -37,7 +37,7 @@ chien.aboyer();
 chien.manger("un os");
 chien.jouer();
 chien.reproduire();
-Chien.gambader();
+Chien.gambader("ok", chien);
 console.log( Chien.mastatic );
 
 new Animal("Rat");

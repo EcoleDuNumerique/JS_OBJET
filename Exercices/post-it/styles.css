@@ -1,0 +1,53 @@
+body {
+    display: flex;
+    flex-wrap: wrap;
+    background-color: #03a9f4;
+}
+#add {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+
+    height: 50px;
+    width: 50px;
+
+    font-size: 34px;
+    font-weight: bold;
+
+    border-radius: 25px;
+
+    background-color: #fff;
+
+    text-align: center;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    cursor: pointer;
+}
+.post-it {
+
+    margin: 10px;
+    background-color: #fff;
+    width : 200px;
+    height: 180px;
+    text-align: center;
+    -webkit-box-shadow: 6px 6px 56px -17px rgba(0,0,0,0.75);
+    -moz-box-shadow: 6px 6px 56px -17px rgba(0,0,0,0.75);
+    box-shadow: 6px 6px 56px -17px rgba(0,0,0,0.75);
+
+}
+
+form {
+    position: fixed;
+    right: 80px;
+    bottom: 20px;
+    display: none;
+}
+#title {
+    width: 152px;
+}
+#content {
+    width: 150px;
+}
