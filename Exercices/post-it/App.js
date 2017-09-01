@@ -35,11 +35,18 @@ class App {
 
     readNotes(){
         var notesString = localStorage.getItem("notes");
+
+        //Verifie si le localStorage est vide
+        if(notesString == null){
+            return;
+        }
+        
         var arrayNotes = JSON.parse( notesString );
         for(var noteObject of arrayNotes){
             var title = noteObject.title;
             var content = noteObject.content;
-            var note = new Note( title , content );
+            var date = noteObject.date;
+            var note = new Note( title , content, date );
             this.addNote( note );
         }
     }
@@ -48,6 +55,12 @@ class App {
         for( var note of this.notes ) {
             note.display();
         }
+    }
+
+    removeNote(index){
+        var note = this.notes[index];
+        note.destroy();
+        this.notes.splice(index, 1); //supprime 1 élément à l'index indiqué
     }
 
 }
