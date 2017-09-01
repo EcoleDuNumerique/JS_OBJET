@@ -43,5 +43,5 @@ $.prototype.custominput = function( options = [] ){
 
 }
 
-var options = ["item1", "item2", "item3"];
+var options = ["item1", "item2", "item3", "item4"];
 $("#selector").custominput( options );
