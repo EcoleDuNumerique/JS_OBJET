@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/styles.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <title> Notes app </title>
+</head>
+<body>
+
+    <div class="eleve">
+        <h2>Nom</h2>
+    </div>
+
+    <form id="add-eleve">
+        <input type="text" id="eleve" placeholder="Eleve nom" >
+        <input type="submit">
+    </form>
+
+    <div id="infos">
+        <div id="container">
+            <div class="close">x</div>
+            <h2></h2>
+            <ul>
+                <!--<li><span>Matiere</span><span>Note</span></li>-->
+            </ul>
+            <form id="add-note">
+                <input type="text" id="subject" placeholder="Matiere nom" >
+                <input type="number" id="note" placeholder="Note" >
+                <input type="submit">
+            </form>
+        </div>
+    </div>
+    
+    <script src="js/jquery.js"></script>
+    <script src="js/class/Note.js"></script>
+    <script src="js/class/Eleve.js"></script>
+    <script src="js/class/App.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
