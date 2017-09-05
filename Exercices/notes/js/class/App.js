@@ -35,6 +35,10 @@ class App {
         var elevesJson = localStorage.getItem("eleves");
         var eleves = JSON.parse( elevesJson );
 
+        if(!eleves){
+            return;
+        }
+
         for(var eleveObject of eleves){
 
             var eleve = new Eleve( eleveObject.name );
