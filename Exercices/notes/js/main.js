@@ -41,3 +41,15 @@ app.$form_note.submit(function( event ){
 app.$close.click(function(){
     app.$infos.fadeOut(300);
 });
+
+$(document).on("click", ".destroy", function( event ){
+
+    event.stopPropagation(); //Empeche la propagation de l'évenement au parent
+    var index = $(".destroy").index( $(this) );
+    app.removeEleve( index );
+
+});
+
+window.onbeforeunload = function(){
+    app.saveEleves();
+}

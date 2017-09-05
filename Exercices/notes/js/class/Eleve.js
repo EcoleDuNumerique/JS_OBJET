@@ -11,6 +11,7 @@ class Eleve {
     display(){
 
         var div = "<div class='eleve'>";
+        div += "<div class='destroy'> X </div>";
         div += "<h2>" + this.name + "</h2>";
         div += "</div>";
 
@@ -35,6 +36,10 @@ class Eleve {
 
         return html;
 
+    }
+
+    destroy(){
+        this.$dom.remove();
     }
 
 }

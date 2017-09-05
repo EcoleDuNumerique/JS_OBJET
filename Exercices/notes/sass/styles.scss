@@ -13,6 +13,7 @@ body {
     #infos {
         background-color: rgba(0, 0, 0, 0.8);
         position: fixed;
+        z-index: 10;
         left: 0px;
         top: 0px;
         width: 100%;
@@ -50,6 +51,16 @@ body {
         align-items: center;
         margin: 10px;
         cursor: pointer;
+        position: relative;
+
+        .destroy {
+            font-weight: bold;
+            position: absolute;
+            top: 5px;
+            right: 5px;
+            font-size: 22px;
+            color: #000;
+        }
     }
     h2 {
         margin:0px;
