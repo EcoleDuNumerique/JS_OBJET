@@ -4,10 +4,11 @@ class Zerg {
 
         this.color = new Color();
         this.color.random();
+        this.life = 3;
 
         this.position = {
             top : 0,
-            left : Math.round( Math.random() * $(window).width() )
+            left : Math.round( Math.random() * ( $(window).width() - 20 ))
         };
 
         this.$dom = null;
@@ -28,10 +29,19 @@ class Zerg {
     }
 
     move(){
-        this.position.top += 10;
+        this.position.top += Zerg.speed;
         this.$dom.css({
             "top" : this.position.top
         });
     }
+    
+    destroy(){
+        this.$dom.remove();
+    }
 
+    static levelup(){
+        Zerg.speed += 5;
+    }
 }
+
+Zerg.speed = 10;
