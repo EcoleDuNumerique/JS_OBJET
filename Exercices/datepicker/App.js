@@ -13,7 +13,7 @@ class App {
             new Date(2018, 11, 25)
         ];
 
-        initPickers();
+        this.initPickers();
 
     }
 
@@ -27,7 +27,7 @@ class App {
             firstDay : 1,
             minDate : new Date( 2017, 0, 1 ),
             maxDate : new Date( 2018, 11, 31 ),
-            beforeShowDay : this.closedDay,
+            beforeShowDay : $.proxy(this.closedDay, this), //Pour ne pas perdre le "this" en tant que mon App
             dateFormat : "dd/mm/yy",
             numberOfMonths : 2
         };
@@ -52,7 +52,5 @@ class App {
 
         return [true, ""]; //Sinon , c'est ok !
     }
-
-
 
 }
