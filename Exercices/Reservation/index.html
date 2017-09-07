@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link rel="stylesheet" href="css/lib/jquery-ui/jquery-ui.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <title>Reservation</title>
+</head>
+<body>
+
+    <!--<div class="logement">
+        <h4>Name</h4>
+    </div>-->
+
+    <div id="reserver">
+        <div>
+            <div class="close">X</div>
+            <h3> Reserver : </h3>
+            <label for="reserver_date_debut"> Du :  </label><input type="text" id="reserver_date_debut"><br>
+            <label for="reserver_date_fin"> Au :    </label><input type="text" id="reserver_date_fin">
+        </div>
+    </div>
+
+    <form id="add_reservation">
+        <label for="add_name"> Nom : </label><input type="text" id="add_name"><br>
+        <label for="add_date_debut"> Du :  </label><input type="text" id="add_date_debut"><br>
+        <label for="add_date_fin"> Au :    </label><input type="text" id="add_date_fin">
+        <input type="submit" value="valider">
+    </form>
+    
+    <script src="js/lib/jquery/jquery.js"></script>
+    <script src="js/lib/jquery/jquery-ui.js"></script>
+    <script src="js/class/Logement.js"></script>
+    <script src="js/class/App.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

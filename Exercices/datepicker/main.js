@@ -7,4 +7,7 @@ app.$date_fin.change(function(){
 
     console.log( dateSelectedStart, dateSelectedEnd );
 
+    dateSelectedStart.getTime() < dateSelectedEnd.getTime()
+    
+
 });
