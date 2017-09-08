@@ -1,0 +1,14 @@
+html, body {
+	height: 100%;
+}
+body {
+    margin: 0px;
+	display: flex;
+
+	#map {
+		width: 70%;
+	}
+	#infos {
+		width: 30%;
+	}
+}
