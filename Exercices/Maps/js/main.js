@@ -19,4 +19,20 @@ app.main = function(){
 
     app.addInfos( narbonne_info, marker );
 
+    app.$form.submit(function( event ){
+
+        event.preventDefault();
+
+        var latlng = {
+            lat: parseInt( app.$lat.val() ),
+            lng: parseInt( app.$long.val() )
+        };
+        var title = app.$titre.val();
+        var infos = app.$description.val();
+        
+        var marker = app.addMarker( latlng, title );
+        app.addInfos( infos, marker );
+
+    });
+
 }

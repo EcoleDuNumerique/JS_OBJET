@@ -5,6 +5,13 @@ class App {
         //DOM Variables
         this.$map = $("#map");
         this.$infos = $("#infos");
+        
+        //Form
+        this.$form = $("#marker_form");
+        this.$titre = $("#titre");
+        this.$lat = $("#latitude");
+        this.$long = $("#longitude");
+        this.$description = $("#description");
 
         //Standard Variables
         this.map = null;
@@ -45,7 +52,7 @@ class App {
         return marker;
     }
 
-    addInfos( content, marker ) {
+    addInfos( content, marker ) {  console.log(marker);
         var infowindow = new google.maps.InfoWindow({
             content: content
         });

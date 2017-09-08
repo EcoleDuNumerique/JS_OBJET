@@ -11,4 +11,11 @@ body {
 	#infos {
 		width: 30%;
 	}
+
+	label {
+		display: block;
+		display: flex;
+		justify-content: space-between;
+		width: 250px;
+	}
 }

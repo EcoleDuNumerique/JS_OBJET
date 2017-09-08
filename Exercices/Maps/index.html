@@ -10,7 +10,33 @@
 <body>
 
     <div id="map"></div>
-    <div id="infos"></div>
+    <div id="infos">
+
+        <form id="marker_form">
+            <label for="titre"> 
+                <span> Titre </span>
+                <input type="text" id="titre" />
+            </label>
+
+            <label for="latitude"> 
+                <span> Latitude </span>
+                <input type="text" id="latitude" />
+            </label>
+
+            <label for="longitude"> 
+                <span> Longitude </span>
+                <input type="text" id="longitude" />
+            </label>
+
+            <label for="description"> 
+                    <span> Informations </span>
+                    <textarea id="description"></textarea>
+            </label>
+
+            <input type="submit">
+        </form>
+
+    </div>
 
     <script src="js/lib/jquery.js"></script>
     <script src="js/class/App.js"></script>
