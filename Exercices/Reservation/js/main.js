@@ -12,4 +12,17 @@ app.$add_reservation.submit(function(event){
     logement.display();
     app.addLogement( logement );
 
-})
+});
+
+$(document).on("click", ".logement", function(){
+
+    var index = $(".logement").index( $(this) );
+    var logement = app.logements[index];
+
+    var minDate = logement.date_debut;
+    var maxDate = logement.date_fin;
+
+    app.initReserverPickers( minDate, maxDate );
+    app.$reserver.fadeIn(300);
+
+});
