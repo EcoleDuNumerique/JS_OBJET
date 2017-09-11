@@ -1,0 +1,14 @@
+<%- include("header") %>
+
+    <h1> Vos livres </h1>
+    <ul>
+        <% for( var livre of livres ) { %>
+            <li> 
+                <h4> Nom : <%= livre.name %> </h4>
+                <h4> Auteur : <%= livre.autor %> </h4>
+                <h4> Nombre de pages : <%= livre.pages %> </h4>
+            </li>
+        <% } %>
+    </ul>
+
+<%- include("footer") %>
