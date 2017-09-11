@@ -91,4 +91,19 @@ class App {
 
     }
 
+    createPolygon( positions ){
+
+        var triangle = new google.maps.Polygon({
+            paths: positions,
+            strokeColor: '#FF0000',
+            strokeOpacity: 0.8,
+            strokeWeight: 2,
+            fillColor: '#FF0000',
+            fillOpacity: 0.35,
+            draggable : true
+        });
+        triangle.setMap( this.map );
+
+    }
+
 }

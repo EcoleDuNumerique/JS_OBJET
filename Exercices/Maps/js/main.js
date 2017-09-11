@@ -52,6 +52,21 @@ app.main = function(){
 
         });
         app.filter( args );
-    })
+    });
+
+    var positions = [];
+    app.map.addListener("click", function( event ){
+
+        var pos = event.latLng;
+        positions.push( pos );
+        
+        if( positions.length == 3 ) {
+
+            app.createPolygon( positions );
+            positions = [];
+
+        }
+
+    });
 
 }
