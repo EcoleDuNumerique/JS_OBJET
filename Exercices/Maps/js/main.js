@@ -29,10 +29,29 @@ app.main = function(){
         };
         var title = app.$titre.val();
         var infos = app.$description.val();
-        
-        var marker = app.addMarker( latlng, title );
+        var type = app.$type.val();
+
+        var marker = app.addMarker( latlng, title, type );
         app.addInfos( infos, marker );
 
+        var args = [];
+        app.$checkboxes.filter(":checked").each(function(){
+
+            args.push( $(this).val() );
+
+        });
+        app.filter( args );
+
     });
+
+    app.$checkboxes.click(function(){
+        var args = [];
+        app.$checkboxes.filter(":checked").each(function(){
+
+            args.push( $(this).val() );
+
+        });
+        app.filter( args );
+    })
 
 }

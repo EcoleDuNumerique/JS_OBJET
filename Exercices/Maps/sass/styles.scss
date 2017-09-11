@@ -9,7 +9,16 @@ body {
 		width: 70%;
 	}
 	#infos {
-		width: 30%;
+		width: calc( 30% - 40px );
+		padding: 20px;
+
+		select {
+			width: 158px;
+		}
+
+		input[type=submit] {
+			
+		}
 	}
 
 	label {
@@ -17,5 +26,6 @@ body {
 		display: flex;
 		justify-content: space-between;
 		width: 250px;
+		margin: 5px;
 	}
 }

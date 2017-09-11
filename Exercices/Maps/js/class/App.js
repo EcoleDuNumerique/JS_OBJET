@@ -12,9 +12,17 @@ class App {
         this.$lat = $("#latitude");
         this.$long = $("#longitude");
         this.$description = $("#description");
+        this.$type = $("#type");
+
+        //Tri
+        this.$hotel = $("#hotel");
+        this.$restaurant = $("#restaurant");
+        this.$bar = $("#bar");
+        this.$checkboxes = $("input[type=checkbox]");
 
         //Standard Variables
         this.map = null;
+        this.markers = [];
 
         //Function
         this.main = null; //On utilisera cet attribut en tant que fonction principale
@@ -43,16 +51,18 @@ class App {
             });
     }
 
-    addMarker( position, title ){
+    addMarker( position, title, type ){
         var marker = new google.maps.Marker({
             position: position,
             map: this.map,
             title: title
         });
+        marker.type = type;
+        this.markers.push( marker );
         return marker;
     }
 
-    addInfos( content, marker ) {  console.log(marker);
+    addInfos( content, marker ) {
         var infowindow = new google.maps.InfoWindow({
             content: content
         });
@@ -61,6 +71,24 @@ class App {
         marker.addListener("click", function(){
             infowindow.open(that.map, marker);
         });
+    }
+
+    filter( args ){ //[ "Restaurant", "Bar" ]
+
+        for(var marker of this.markers){
+
+            marker.setVisible(false);
+
+            for( var arg of args ) {
+
+                if( marker.type == arg ) {
+                    marker.setVisible(true);
+                }
+
+            }
+
+        }
+
     }
 
 }
