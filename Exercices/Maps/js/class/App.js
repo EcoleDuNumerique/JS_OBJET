@@ -23,6 +23,7 @@ class App {
         //Standard Variables
         this.map = null;
         this.markers = [];
+        this.triangles = [];
 
         //Function
         this.main = null; //On utilisera cet attribut en tant que fonction principale
@@ -91,7 +92,7 @@ class App {
 
     }
 
-    createPolygon( positions ){
+    addPolygon( positions ){
 
         var triangle = new google.maps.Polygon({
             paths: positions,
@@ -104,6 +105,32 @@ class App {
         });
         triangle.setMap( this.map );
 
+        this.triangles.push( triangle );
+
     }
 
+    searchInTriangles(){
+
+        var findedMarkers = [];
+        for( var triangle of this.triangles ) {
+
+            for( var marker of this.markers ) {
+
+                var finded = google
+                                .maps
+                                .geometry
+                                .poly
+                                .containsLocation(marker.position, triangle);
+                if( finded == true ){
+                    findedMarkers.push( marker );
+                }
+
+            }
+
+        }
+
+        return findedMarkers;
+
+    }
+    
 }

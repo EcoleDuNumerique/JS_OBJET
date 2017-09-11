@@ -62,7 +62,7 @@ app.main = function(){
         
         if( positions.length == 3 ) {
 
-            app.createPolygon( positions );
+            app.addPolygon( positions );
             positions = [];
 
         }
