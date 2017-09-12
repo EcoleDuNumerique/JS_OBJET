@@ -11,4 +11,14 @@
         <% } %>
     </ul>
 
+    <form action="/service/add/livre" method="post" >
+
+        <h2> Ajouter un livre </h2>
+        <input type="text" name="name" placeholder="name" />
+        <input type="text" name="autor" placeholder="autor" />
+        <input type="number" name="pages" placeholder="nbre de pages" />
+        <input type="submit" />
+
+    </form>
+
 <%- include("footer") %>

@@ -2,13 +2,20 @@
 var express = require("express"); 
 var app = express();
 
+//Permet de recuperer les datas dans la requête ('POST', 'GET' ...ect)
+var bodyParser = require('body-parser');
+
 var mysql = require("mysql");
 
 //Mon module Book
 var Book = require("./libs/Book");
+var Services = require("./libs/Services");
 
 //On doit utiliser cette commande pour rendre le dossier "statique", non rerouté par le serveur
 app.use(express.static('public'));
+
+//On demande a express d'utiliser body parser
+app.use(bodyParser.urlencoded({ extended: false }));
 
 var user = "Pierre";
 var counter = 0;
@@ -59,6 +66,21 @@ app.get('/livres', function( req, res ){
         } );
 
     });
+
+});
+
+app.post("/service/add/livre", function(req, res){
+
+    //Les données envoyé sont dans req.body d'après la doc
+    console.log( req.body );
+    
+    connection.query(
+        "INSERT INTO livres SET name=?, autor=?, pages=?",
+        [req.body.name, req.body.autor, req.body.pages],
+        function( error, results, fields ){
+            res.redirect( "/livres" );
+        }
+    )
 
 });
 
