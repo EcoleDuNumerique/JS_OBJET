@@ -9,6 +9,9 @@ var mysql = require("mysql");
 
 //Mon module Book
 var Book = require("./libs/Book");
+var Cd = require("./libs/Cd");
+
+//Mes services
 var Services = require("./libs/Services");
 
 //On doit utiliser cette commande pour rendre le dossier "statique", non rerouté par le serveur
@@ -17,6 +20,9 @@ app.use(express.static('public'));
 //On demande a express d'utiliser body parser
 app.use(bodyParser.urlencoded({ extended: false }));
 
+var SERVOR = {
+    errors : []
+};
 var user = "Pierre";
 var counter = 0;
 
@@ -81,6 +87,40 @@ app.post("/service/add/livre", function(req, res){
             res.redirect( "/livres" );
         }
     )
+
+});
+
+app.get("/cds", function( req, res ){
+
+    connection.query("SELECT * FROM cds", function(error, results, fields){
+
+        var cds = [];
+        for( var result of results ){
+
+            var cd = new Cd( result );
+            cds.push( cd );
+
+        }
+
+        res.render("cds.ejs", {
+            title : "CDs",
+            cds : cds
+        });
+
+    })
+
+});
+
+app.post("/service/add/cd", function( req, res ){
+
+    var serviceCd = new Services.Cd( req.body );
+    if( serviceCd.checkErrors() ){
+        SERVOR.errors = serviceCd.errors;
+        res.redirect("/cds");
+    }
+    else {
+        serviceCd.createCd( connection, res );
+    }
 
 });
 

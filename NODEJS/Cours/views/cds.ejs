@@ -1,0 +1,24 @@
+<%- include("header") %>
+
+    <h1> Vos CDs </h1>
+    <ul>
+        <% for( var cd of cds) { %>
+            <li>
+                <h4> <%= cd.name %> </h4>
+                <h4> <%= cd.autor %> </h4>
+                <h4> <%= cd.time %> </h4>
+            </li>
+        <% } %>
+    </ul>
+
+    <form action="/service/add/cd" method="post" >
+
+        <h2> Ajouter un cd </h2>
+        <input type="text" name="name" placeholder="name" />
+        <input type="text" name="autor" placeholder="autor" />
+        <input type="number" name="time" placeholder="temps" />
+        <input type="submit" />
+
+    </form>
+
+<%- include("footer") %>
