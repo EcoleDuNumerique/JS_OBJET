@@ -14,7 +14,7 @@
             background-color: #000;
             opacity: 0;
         }
-        button {
+        button, input, #messages {
             position: absolute;
             z-index: 1;
         }
@@ -26,6 +26,18 @@
             top : 10px;
             right: 10px;
         }
+        #chat {
+            top: 50px;
+            left: 10px;
+        }
+        #envoyer {
+            top: 50px;
+            left: 180px;
+        }
+        #messages {
+            top: 100px;
+            left: 10px;
+        }
     </style>
 </head>
 <body>
@@ -34,6 +46,13 @@
 
     <button id="light_off"> Eteindre </button>
     <button id="light_on"> Allumer </button>
+
+    <input type="text" id="chat" placeholder="message">
+    <button id="envoyer"> Envoyer </button>
+
+    <div id="messages">
+
+    </div>
 
     <script src="socket.io.js"></script>
     <script src="client.js"></script>
