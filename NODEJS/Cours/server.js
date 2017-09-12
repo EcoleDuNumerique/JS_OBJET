@@ -119,7 +119,9 @@ app.post("/service/add/cd", function( req, res ){
         res.redirect("/cds");
     }
     else {
-        serviceCd.createCd( connection, res );
+        serviceCd.createCd( connection, function(){
+            res.redirect("/cds");
+        } );
     }
 
 });

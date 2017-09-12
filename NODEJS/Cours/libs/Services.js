@@ -34,17 +34,17 @@ class ServiceCd extends Service {
         //     return false;
         // }
 
-        return (this.errors.length > 0);
+        return ( Object.keys(this.errors).length > 0 );
 
     }
 
-    createCd( connection, res ){
+    createCd( connection, callback ){
         
         connection.query(
             "INSERT INTO cds SET name=?, autor=?, time=?",
             [this.posts.name, this.posts.autor, this.posts.time],
             function(errors, results, fields){
-                res.redirect("/cds");
+                callback();
             }
         )
 
