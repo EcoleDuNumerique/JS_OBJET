@@ -21,7 +21,12 @@ app.use(express.static('public'));
 app.use(bodyParser.urlencoded({ extended: false }));
 
 var SERVOR = {
-    errors : []
+    errors : [],
+    displayErrors : function(){
+        var errors = this.errors;
+        this.errors = [];
+        return errors;
+    }
 };
 var user = "Pierre";
 var counter = 0;
@@ -104,7 +109,8 @@ app.get("/cds", function( req, res ){
 
         res.render("cds.ejs", {
             title : "CDs",
-            cds : cds
+            cds : cds,
+            errors: SERVOR.displayErrors()
         });
 
     })

@@ -11,6 +11,10 @@
         <% } %>
     </ul>
 
+    <% for(var key in errors) { %>
+        <div class='error'><%= key %> : <%= errors[key] %></div>
+    <% } %>
+
     <form action="/service/add/cd" method="post" >
 
         <h2> Ajouter un cd </h2>
